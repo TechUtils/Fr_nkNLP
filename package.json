@@ -1,31 +1,25 @@
 {
-  "name": "bookshop",
-  "version": "1.0.0",
-  "description": "Simple API to demonstrate REST principles",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/covcom/bookshop.git"
-  },
-  "keywords": [
-    "nodejs",
-    "rest",
-    "api",
-    "javascript"
-  ],
-  "author": "Mark J Tyers",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/covcom/bookshop/issues"
-  },
-  "homepage": "https://github.com/covcom/bookshop#readme",
-  "dependencies": {
-    "restify": "^4.0.3"
-  },
-  "engines": {
-    "node": "5.2.0"
-  }
+	"name": "fr-nekenstien",
+	"version": "1.0.0",
+	"description": "API to parse Statement structures",
+	"main": "in.techutils.fr_nkenstien.cognition.parser.LangParser",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TechUtils/Fr_nkNLP.git"
+	},
+	"keywords": [
+		"java",
+		"rest",
+		"api",
+		"OpenNLP"
+	],
+	"author": "Vineet Verma",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/TechUtils/Fr_nkNLP/issues"
+	},
+	"homepage": "https://github.com/TechUtils/Fr_nkNLP",
+	"dependencies": {
+		"restify": "^4.0.3"
+	}
 }
