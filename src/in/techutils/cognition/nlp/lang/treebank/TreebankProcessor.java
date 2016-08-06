@@ -1,5 +1,6 @@
 package in.techutils.cognition.nlp.lang.treebank;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -33,41 +34,50 @@ public class TreebankProcessor {
 		InputStream modelIn = null;
 		try {
 			{
+				System.out.println("en-sent.bin:" + (new File(MODEL_PATH + "en-sent.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-sent.bin");
 				BaseModel model = new SentenceModel(modelIn);
 				sentenceDetector = new SentenceDetectorME((SentenceModel) model);
 			}
 			{
+				System.out.println("en-token.bin:" + (new File(MODEL_PATH + "en-token.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-token.bin");
 				BaseModel model = new TokenizerModel(modelIn);
 				tokenizer = new TokenizerME((TokenizerModel) model);
 			}
 			{
+				System.out.println("en-ner-person.bin:" + (new File(MODEL_PATH + "en-ner-person.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-ner-person.bin");
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				nameFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
 			{
+				System.out.println("en-ner-location.bin:" + (new File(MODEL_PATH + "en-ner-location.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-ner-location.bin");
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				placeFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
 			{
+				System.out.println("en-ner-date.bin:" + (new File(MODEL_PATH + "en-ner-date.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-ner-date.bin");
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				timeFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
 			{
+				System.out.println("en-ner-money.bin:" + (new File(MODEL_PATH + "en-ner-money.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-ner-money.bin");
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				currencyFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
 			{
+				System.out.println(
+						"en-ner-organization.bin:" + (new File(MODEL_PATH + "en-ner-organization.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-ner-organization.bin");
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				orgFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
 			{
+				System.out.println("en-parser-chunking:" + (new File(MODEL_PATH + "en-parser-chunking.bin")).exists());
 				modelIn = new FileInputStream(MODEL_PATH + "en-parser-chunking.bin");
 				BaseModel model = new ParserModel(modelIn);
 				parser = ParserFactory.create((ParserModel) model);
@@ -86,8 +96,6 @@ public class TreebankProcessor {
 	public void processCorpus(MessageCorpus mc) {
 		String corpus = mc.getCorpus();
 		String[] statements = detectSentences(corpus);
-		// Entity source = mc.getSource();
-		// System.out.println(source.getName() + " says: " + mc.getCorpus());
 		for (String statement : statements) {
 			try {
 				String[] names = detectObjects(statement, getNameFinder());
@@ -110,7 +118,6 @@ public class TreebankProcessor {
 
 	private void storeDetectedData(MessageCorpus mc, String type, String[] objects) {
 		for (String data : objects) {
-			System.out.println(type + "--->" + data);
 			mc.getDetections().add(new Detection(data, type));
 		}
 	}
