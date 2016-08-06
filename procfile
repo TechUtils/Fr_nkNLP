@@ -1,0 +1,1 @@
+web: java -jar target/dependency/webapp-runner-8.0.24.0.jar --port 8082 target/Fr_nkNLP-0.0.1.war
