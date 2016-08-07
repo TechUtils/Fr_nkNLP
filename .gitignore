@@ -2,3 +2,4 @@
 .env
 target
 run.log 
+.settings
