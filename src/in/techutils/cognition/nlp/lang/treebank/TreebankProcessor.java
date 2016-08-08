@@ -63,12 +63,13 @@ public class TreebankProcessor {
 				BaseModel model = new TokenNameFinderModel(modelIn);
 				timeFinder = new NameFinderME((TokenNameFinderModel) model);
 			}
-			{
-				System.out.println("en-ner-money.bin:" + (new File(MODEL_PATH + "en-ner-money.bin")).exists());
-				modelIn = new FileInputStream(MODEL_PATH + "en-ner-money.bin");
-				BaseModel model = new TokenNameFinderModel(modelIn);
-				currencyFinder = new NameFinderME((TokenNameFinderModel) model);
-			}
+			// {
+			// System.out.println("en-ner-money.bin:" + (new File(MODEL_PATH +
+			// "en-ner-money.bin")).exists());
+			// modelIn = new FileInputStream(MODEL_PATH + "en-ner-money.bin");
+			// BaseModel model = new TokenNameFinderModel(modelIn);
+			// currencyFinder = new NameFinderME((TokenNameFinderModel) model);
+			// }
 			{
 				System.out.println(
 						"en-ner-organization.bin:" + (new File(MODEL_PATH + "en-ner-organization.bin")).exists());
@@ -101,12 +102,13 @@ public class TreebankProcessor {
 				String[] names = detectObjects(statement, getNameFinder());
 				String[] places = detectObjects(statement, getPlaceFinder());
 				String[] times = detectObjects(statement, getTimeFinder());
-				String[] currencies = detectObjects(statement, getCurrencyFinder());
+				// String[] currencies = detectObjects(statement,
+				// getCurrencyFinder());
 				String[] orgs = detectObjects(statement, getOrgFinder());
 				storeDetectedData(mc, "names", names);
 				storeDetectedData(mc, "places", places);
 				storeDetectedData(mc, "time", times);
-				storeDetectedData(mc, "currency", currencies);
+				// storeDetectedData(mc, "currency", currencies);
 				storeDetectedData(mc, "org", orgs);
 			} catch (Exception e) {
 				e.printStackTrace();
