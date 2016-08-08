@@ -13,6 +13,11 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet>
+		<servlet-name>FrnkServlet</servlet-name>
+		<servlet-class>launch.FrnkServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>LangParse</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
