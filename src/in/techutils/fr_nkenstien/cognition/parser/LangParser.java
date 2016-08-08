@@ -8,25 +8,15 @@ import javax.ws.rs.core.MediaType;
 
 import in.techutils.cognition.nlp.lang.Entity;
 import in.techutils.cognition.nlp.lang.MessageCorpus;
-import in.techutils.cognition.nlp.lang.treebank.TreebankProcessor;
+import launch.FrnkServlet;
 
 @Path("/ParseService")
 public class LangParser {
 
-	private static TreebankProcessor t = null;
-
-	synchronized private TreebankProcessor getTreebankProcessor() {
-		if (t == null) {
-			t = new TreebankProcessor();
-		}
-		return t;
-	}
-
 	@POST
 	@Path("/parse")
 	@Produces(MediaType.APPLICATION_JSON)
-	public String parsedStatement(@FormParam("userid") String userId,
-			@FormParam("text") String sentence) {
+	public String parsedStatement(@FormParam("userid") String userId, @FormParam("text") String sentence) {
 
 		System.out.println("User ID: " + userId);
 		System.out.println("text: " + sentence);
@@ -37,7 +27,7 @@ public class LangParser {
 		Entity source = new Entity(Entity.TYPE.USER);
 		source.setName(userId);
 		MessageCorpus mc = new MessageCorpus(sentence, source);
-		getTreebankProcessor().processCorpus(mc);
+		FrnkServlet.getTreebankProcessor().processCorpus(mc);
 		return mc.toString();
 	}
 
