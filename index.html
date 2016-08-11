@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Fr_nkNLP by TechUtils</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Fr_nkNLP</h1>
+        <h2>Natural Language Processing for Fr_nkenstien</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/TechUtils/Fr_nkNLP/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/TechUtils/Fr_nkNLP/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/TechUtils/Fr_nkNLP" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="fr_nknlp" class="anchor" href="#fr_nknlp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Fr_nkNLP</h1>
+
+<p><strong>Fr_nkNLP</strong> is a child project of the fr_nkenstien Project.
+It is currently hosted on <a href="https://fr-nk-nlp.herokuapp.com/">Heroku</a> as a free service.</p>
+
+<p>This API converts Natural Language Sentences to JSON based tree structure identifying components such as Names, Organizations, Places, time, etc.</p>
+
+<p>API is currently very basic and does not have much functionality.</p>
+
+<p>Need to add:</p>
+
+<ul>
+<li>Ability to do optional Identification of Items</li>
+<li>Ability to train the models in Live Mode</li>
+<li>Incoming Message Logging capability</li>
+<li>Treebank Translations in Response</li>
+</ul>
+
+<p>Backend: The code uses <code>Apache OpenNLP</code> Library</p>
+
+<p>Endpoint URL: <a href="https://fr-nk-nlp.herokuapp.com/rest/ParseService/parse">https://fr-nk-nlp.herokuapp.com/rest/ParseService/parse</a></p>
+
+<p>Params:  (<code>POST</code>)</p>
+
+<ul>
+<li>UserID<code>(Field name: userid)</code>: Name/user id of the user who is saying the statement</li>
+<li>Sentence Text<code>(Field name: text)</code>: Sentence to be parsed.</li>
+</ul>
+
+<blockquote>
+<p>due to free service hosting limitations, the first responses may be slow and may time out. It takes time to restart the Dyno, therefore please wait for response.</p>
+
+<p>Only English language is supported at the moment</p>
+</blockquote>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
