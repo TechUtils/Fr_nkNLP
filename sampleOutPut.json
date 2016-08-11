@@ -1,0 +1,85 @@
+{
+  "msgId": "Msg#1",
+  "corpus": "This is a sample response to the frankenstien API",
+  "source": {
+    "id": "EntityID#1",
+    "name": "TechUtils",
+    "type": "USER",
+    "msgs": []
+  },
+  "msgTime": "Aug 11, 2016 9:58:01 AM",
+  "parsed": [
+    {
+      "type": "S",
+      "subElements": [
+        {
+          "type": "NP",
+          "subElements": [
+            {
+              "type": "DT",
+              "value": "This"
+            }
+          ]
+        },
+        {
+          "type": "VP",
+          "subElements": [
+            {
+              "type": "VBZ",
+              "value": "is"
+            },
+            {
+              "type": "NP",
+              "subElements": [
+                {
+                  "type": "NP",
+                  "subElements": [
+                    {
+                      "type": "DT",
+                      "value": "a"
+                    },
+                    {
+                      "type": "NN",
+                      "value": "sample"
+                    },
+                    {
+                      "type": "NN",
+                      "value": "response"
+                    }
+                  ]
+                },
+                {
+                  "type": "PP",
+                  "subElements": [
+                    {
+                      "type": "TO",
+                      "value": "to"
+                    },
+                    {
+                      "type": "NP",
+                      "subElements": [
+                        {
+                          "type": "DT",
+                          "value": "the"
+                        },
+                        {
+                          "type": "NN",
+                          "value": "frankenstien"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": ".",
+          "value": "API"
+        }
+      ]
+    }
+  ],
+  "detections": []
+}
