@@ -1,6 +1,0 @@
-{
-  "name": "Fr_nkNLP",
-  "tagline": "Natural Language Processing for Fr_nkenstien",
-  "body": "# Fr_nkNLP\r\n**Fr_nkNLP** is a child project of the fr_nkenstien Project.\r\nIt is currently hosted on [Heroku](https://fr-nk-nlp.herokuapp.com/) as a free service.\r\n\r\nThis API converts Natural Language Sentences to JSON based tree structure identifying components such as Names, Organizations, Places, time, etc.\r\n\r\nAPI is currently very basic and does not have much functionality.\r\n\r\nNeed to add:\r\n- Ability to do optional Identification of Items\r\n- Ability to train the models in Live Mode\r\n- Incoming Message Logging capability\r\n- Treebank Translations in Response\r\n\r\nBackend: The code uses `Apache OpenNLP` Library\r\n\r\nEndpoint URL: https://fr-nk-nlp.herokuapp.com/rest/ParseService/parse\r\n\r\nParams:  (`POST`)\r\n- UserID`(Field name: userid)`: Name/user id of the user who is saying the statement\r\n- Sentence Text`(Field name: text)`: Sentence to be parsed.\r\n\r\n> due to free service hosting limitations, the first responses may be slow and may time out. It takes time to restart the Dyno, therefore please wait for response.\r\n\r\n> Only English language is supported at the moment",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
